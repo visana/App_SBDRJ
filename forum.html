@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="format-detection" content="telephone=no">
+<meta name="msapplication-tap-highlight" content="no">
+<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+<script type="text/javascript" src="js/index.js" defer></script>
+<link rel="stylesheet" type="text/css" href="css/base.css">
+<link rel="stylesheet" type="text/css" href="css/guia_2.css?v2">
+<style>
+[type="radio"]:checked, [type="radio"]:not(:checked) {
+	position: absolute;
+	left: -9999px;
+}
+[type="radio"]:checked + label, [type="radio"]:not(:checked) + label {
+	position: relative;
+	padding-left: 28px;
+	cursor: pointer;
+	line-height: 20px;
+	display: inline-block;
+	color: #666;
+}
+[type="radio"]:checked + label:before, [type="radio"]:not(:checked) + label:before {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 18px;
+	height: 18px;
+	border: 1px solid #ddd;
+	border-radius: 100%;
+	background: #fff;
+}
+[type="radio"]:checked + label:after, [type="radio"]:not(:checked) + label:after {
+	content: '';
+	width: 12px;
+	height: 12px;
+	background: #D94514;
+	position: absolute;
+	top: 4px;
+	left: 4px;
+	border-radius: 100%;
+	-webkit-transition: all 0.2s ease;
+	transition: all 0.2s ease;
+}
+[type="radio"]:not(:checked) + label:after {
+	opacity: 0;
+	-webkit-transform: scale(0);
+	transform: scale(0);
+}
+[type="radio"]:checked + label:after {
+	opacity: 1;
+	-webkit-transform: scale(1);
+	transform: scale(1);
+}
+</style>
+<style>
+.icon.menu-icon::after {
+	background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iNThweCIgaGVpZ2h0PSI0NXB4IiB2aWV3Qm94PSIwIDAgNTggNDUiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+CiAgICA8IS0tIEdlbmVyYXRvcjogU2tldGNoIDQ2LjIgKDQ0NDk2KSAtIGh0dHA6Ly93d3cuYm9oZW1pYW5jb2RpbmcuY29tL3NrZXRjaCAtLT4KICAgIDx0aXRsZT5pY29uLW1lbnU8L3RpdGxlPgogICAgPGRlc2M+Q3JlYXRlZCB3aXRoIFNrZXRjaC48L2Rlc2M+CiAgICA8ZGVmcz48L2RlZnM+CiAgICA8ZyBpZD0iUGFnZS0xIiBzdHJva2U9Im5vbmUiIHN0cm9rZS13aWR0aD0iMSIgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj4KICAgICAgICA8ZyBpZD0iaWNvbi1tZW51IiBmaWxsLXJ1bGU9Im5vbnplcm8iIGZpbGw9IiNGRkZGRkYiPgogICAgICAgICAgICA8cGF0aCBkPSJNNTQuNDE2LDguMjkgTDMuNTg0LDguMjkgQzEuNjEzLDguMjkgMCw2LjY3NyAwLDQuNzA2IEwwLDMuNTg0IEMwLDEuNjEzIDEuNjEzLDAgMy41ODQsMCBMNTQuNDE2LDAgQzU2LjM4NywwIDU4LDEuNjEzIDU4LDMuNTg0IEw1OCw0LjcwNiBDNTgsNi42NzcgNTYuMzg3LDguMjkgNTQuNDE2LDguMjkiIGlkPSJGaWxsLTkzIj48L3BhdGg+CiAgICAgICAgICAgIDxwYXRoIGQ9Ik01NC40MTYsMjYuNjQ0IEwzLjU4NCwyNi42NDQgQzEuNjEzLDI2LjY0NCAwLDI1LjAzMSAwLDIzLjA2IEwwLDIxLjkzOSBDMCwxOS45NjggMS42MTMsMTguMzU1IDMuNTg0LDE4LjM1NSBMNTQuNDE2LDE4LjM1NSBDNTYuMzg3LDE4LjM1NSA1OCwxOS45NjggNTgsMjEuOTM5IEw1OCwyMy4wNiBDNTgsMjUuMDMxIDU2LjM4NywyNi42NDQgNTQuNDE2LDI2LjY0NCIgaWQ9IkZpbGwtOTQiPjwvcGF0aD4KICAgICAgICAgICAgPHBhdGggZD0iTTU0LjQxNiw0NSBMMy41ODQsNDUgQzEuNjEzLDQ1IDAsNDMuMzg3IDAsNDEuNDE2IEwwLDQwLjI5NCBDMCwzOC4zMjMgMS42MTMsMzYuNzEgMy41ODQsMzYuNzEgTDU0LjQxNiwzNi43MSBDNTYuMzg3LDM2LjcxIDU4LDM4LjMyMyA1OCw0MC4yOTQgTDU4LDQxLjQxNiBDNTgsNDMuMzg3IDU2LjM4Nyw0NSA1NC40MTYsNDUiIGlkPSJGaWxsLTk1Ij48L3BhdGg+CiAgICAgICAgPC9nPgogICAgPC9nPgo8L3N2Zz4=)
+}
+</style>
+<title>Sociedade Brasileira de Dermatologia | Regional Rio de Janeiro</title>
+<script src="js/jquery.js"></script>
+<script>
+function carregar_conteudo() {
+
+	var $online = navigator.onLine;
+
+if ($online) {		
+	
+	$login=$("#login").val();
+	$senha=$("#senha").val();
+
+$("#offline").hide();
+$("#botao").show();
+$("#carregando").show();	
+$.post( "http://appsbdrj.kinghost.net/appsbdrj/recebepost.php", { form: "forum"})
+  .done(function( data ) {
+	  if (data=='AUTORIZADO'){
+		  	
+		window.location.href = "principal.html?logado";
+	  }
+	  else {
+		  $("#carregando").hide();
+		$( "#retorno_post" ).html( data );
+	  }
+    
+  });
+
+}
+else {
+	$("#offline").show();	
+	$("#botao").hide();
+};
+	
+};
+</script>
+
+
+</head>
+
+<body onLoad="javascript:carregar_conteudo();">
+<div class="menu">
+  <div class="app-menu"> <a role="button" href="#" class="icon close"><span>Fechar</span></a>
+    <div class="sub-menu">
+      <ul class="list">
+                    <li class="item"><a role="button" class="btn icon sbdrj" href="instituicao.html"><span>A instituição</span></a></li>
+                    <li class="item"><a role="button" class="btn icon tools" href="ferramentas.html"><span>Ferramentas Clínicas</span></a></li>
+                    <li class="item"><a role="button" class="btn icon guia" href="guia.html"><span>Guia Médico</span></a></li>
+                    <li class="item"><a role="button" class="btn icon eventos" href="eventos.html"><span>Eventos</span></a></li>
+                    <li class="item"><a role="button" class="btn icon galeria" href="galeria.html"><span>Galeria</span></a></li>
+                    <li class="item"><a role="button" class="btn icon chat" href="forum.html"><span>Fórum</span></a></li>
+                    <li class="item"><a role="button" class="btn icon cadastro" href="altera_cadastro.html"><span>Alterar Dados</span></a></li>
+                    <li class="item"><a role="button" class="btn icon config" href="sobre.html"><span>Sobre o App</span></a></li>
+                    <li class="item"><a role="button" class="btn icon sair last" href="sair.html"><span>Logout</span></a></li>
+                </ul>
+    </div>
+    <div class="footer-menu"> <span class="title">Diretoria 2019-2020 | Diretoria 2019-2020 | Gestão Professora Maria Auxilidora Jeunon Sousa</span> <span class="text">SBDRJ | Sociedade Brasileira de Dermatologia - Regional Rio de Janeiro</span> <a class="link-site" href="https://www.sbdrj.org.br">www.sbdrj.org.br</a> </div>
+  </div>
+</div>
+<div class="app">
+  <div class="header">
+    <div class="menubar"> <a role="button" href="#" class="icon menu-icon hidden-text">Menu</a> <img class="logo-mini" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iOTZweCIgaGVpZ2h0PSI3MnB4IiB2aWV3Qm94PSIwIDAgOTYgNzIiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+CiAgICA8IS0tIEdlbmVyYXRvcjogU2tldGNoIDQ2LjIgKDQ0NDk2KSAtIGh0dHA6Ly93d3cuYm9oZW1pYW5jb2RpbmcuY29tL3NrZXRjaCAtLT4KICAgIDx0aXRsZT5Hcm91cDwvdGl0bGU+CiAgICA8ZGVzYz5DcmVhdGVkIHdpdGggU2tldGNoLjwvZGVzYz4KICAgIDxkZWZzPjwvZGVmcz4KICAgIDxnIGlkPSJQYWdlLTEiIHN0cm9rZT0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIxIiBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPgogICAgICAgIDxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0xMjY0LjAwMDAwMCwgLTg1LjAwMDAwMCkiIGlkPSJHcm91cC0zMCIgZmlsbD0iI0ZGRkZGRiI+CiAgICAgICAgICAgIDxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDY0OC4wMDAwMDAsIDQxLjAwMDAwMCkiPgogICAgICAgICAgICAgICAgPGcgaWQ9Ikdyb3VwIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSg2MTYuMDAwMDAwLCA0NC4wMDAwMDApIj4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNNjguNTkxOCw0My43OTcgTDY4LjU5MTgsNDMuNzk3IEM2Ny4yMTM4LDM2LjUyMSA1OS4yNjc4LDI0LjY1MyA0Ny4zMjg4LDIzLjczNSBDMzQuMzY1OCwyMi43MTEgMjkuNTYyOCwyOS43MDQgMjkuNTYyOCwyOS43MDQgQzI5LjU2MjgsMjkuNzA0IDI0Ljg2NDgsNy45NDcgMTguMjk1OCw3Ljk0NyBDNy40NTE4LDcuOTQ3IDAuMTQwOCw0Mi4zODQgMC4xNDA4LDQyLjM4NCBMMC4xNDA4LDQyLjQ1NSBDMC4xNDA4LDQyLjYzMSAwLjMxNzgsNDIuODQzIDAuNTI4OCw0Mi44NDMgQzAuNzA1OCw0Mi44NDMgMC44NDc4LDQyLjcwMiAwLjkxNzgsNDIuNTI2IEMzLjM1NTgsMzIuOTUzIDkuOTI0OCwxMS42NTUgMTguMzY1OCwxMS42NTUgQzI0LjkzNTgsMTEuNjU1IDI5LjgxMDgsMzMuOTc4IDI5LjgxMDgsMzMuOTc4IEMyOS44MTA4LDMzLjk3OCAzNC43MTk4LDI2LjgwOCA0Ny44OTM4LDI3Ljg2NyBDNTcuNzQ3OCwyOC42NDUgNjQuOTE3OCwzNi44NzQgNjguMDYxOCw0My45MzggQzY4LjA5NzgsNDQuMDQ0IDY4LjIwMjgsNDQuMTE1IDY4LjMwOTgsNDQuMTE1IEM2OC40ODY4LDQ0LjExNSA2OC41OTE4LDQ0LjAwOSA2OC41OTE4LDQzLjgzMiBMNjguNTkxOCw0My43OTcgWiIgaWQ9IkZpbGwtMjAiPjwvcGF0aD4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNNjguNTkxOCwzNS44NSBDNjcuMjEzOCwyOC42MDkgNTkuMjY3OCwxNi43NDIgNDcuMzI4OCwxNS43ODggQzM0LjM2NTgsMTQuNzY0IDI5LjU2MjgsMjEuNzU3IDI5LjU2MjgsMjEuNzU3IEMyOS41NjI4LDIxLjc1NyAyNC44NjQ4LDAgMTguMjk1OCwwIEM3LjQ1MTgsMCAwLjE0MDgsMzQuNDM3IDAuMTQwOCwzNC40MzcgTDAuMTQwOCwzNC41MDggQzAuMTQwOCwzNC43MiAwLjMxNzgsMzQuODk2IDAuNTI4OCwzNC44OTYgQzAuNzA1OCwzNC44OTYgMC44NDc4LDM0Ljc1NSAwLjkxNzgsMzQuNjE0IEMzLjM1NTgsMjUuMDA3IDkuOTI0OCwzLjcwOCAxOC4zNjU4LDMuNzA4IEMyNC45MzU4LDMuNzA4IDI5LjgxMDgsMjYuMDY2IDI5LjgxMDgsMjYuMDY2IEMyOS44MTA4LDI2LjA2NiAzNC43MTk4LDE4Ljg2MSA0Ny44OTM4LDE5LjkyMSBDNTcuNzQ3OCwyMC42OTggNjQuOTE3OCwyOC45MjcgNjguMDYxOCwzNi4wMjcgQzY4LjA5NzgsMzYuMTMyIDY4LjIwMjgsMzYuMjAzIDY4LjMwOTgsMzYuMjAzIEM2OC40ODY4LDM2LjIwMyA2OC41OTE4LDM2LjA2MiA2OC41OTE4LDM1LjkyMSBMNjguNTkxOCwzNS44NSBaIE05Mi45OTc4LDQ0LjUzOSBMOTUuODU5OCw0NC41MzkgTDk1Ljg1OTgsNjQuNzc3IEM5NS44NTk4LDY4LjUyMSA5NC4zNzU4LDcxLjMxMSA5MC4zNDg4LDcxLjMxMSBDODkuOTk1OCw3MS4zMTEgODkuNzQ3OCw3MS4yNzYgODkuNDY1OCw3MS4yNDEgTDg4LjkzNjgsNjguNTU3IEw4OS42Nzc4LDY4LjU1NyBDOTIuNzE1OCw2OC41NTcgOTIuOTk3OCw2Ny4wMzcgOTIuOTk3OCw2My45MyBMOTIuOTk3OCw0NC41MzkgWiBNODcuNDE2OCw2MC42MSBDODUuODk4OCw1OC4xMDIgODQuODAzOCw1Ni4yMyA4Mi45NjY4LDU1LjAyOSBDODUuMTIxOCw1NC4xODEgODYuMzIxOCw1Mi40NTEgODYuMzIxOCw1MC4xNTUgQzg2LjMyMTgsNDYuNjU4IDgzLjgxNDgsNDQuNTM5IDc5Ljc1MjgsNDQuNTM5IEw3NC43MDE4LDQ0LjUzOSBMNzQuNzAxOCw2NC41NjUgTDc3LjU2MzgsNjQuNTY1IEw3Ny41NjM4LDU1Ljg3NiBMNzguNzYzOCw1NS44NzYgQzgwLjI0NjgsNTUuODc2IDgxLjQ0NzgsNTYuMzM2IDg0LjA5NzgsNjAuNDMzIEw4Ni43MTA4LDY0LjU2NSBMOTAuMTcxOCw2NC41NjUgQzg4Ljc5NDgsNjIuNjU4IDg4LjMwMDgsNjEuOTg3IDg3LjQxNjgsNjAuNjEgTDg3LjQxNjgsNjAuNjEgWiBNNzkuNDM1OCw1My4yNjMgTDc3LjU2MzgsNTMuMjYzIEw3Ny41NjM4LDQ3LjAxMSBMNzkuNDM1OCw0Ny4wMTEgQzgyLjIyNTgsNDcuMDExIDgzLjMyMDgsNDguMTQyIDgzLjM1NTgsNTAuMDE0IEM4My4zOTA4LDUxLjcwOSA4Mi41MDc4LDUzLjI2MyA3OS40MzU4LDUzLjI2MyBMNzkuNDM1OCw1My4yNjMgWiIgaWQ9IkZpbGwtMjEiPjwvcGF0aD4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNNDIuODA3Niw1NC4xNDYgQzQ0Ljc1MDYsNTMuMDg2IDQ1LjY2ODYsNTEuNzA5IDQ1LjY2ODYsNDkuNjk2IEM0NS42Njg2LDQ3LjQgNDQuMzk3Niw0NC41MzkgMzkuMDI4Niw0NC41MzkgTDM0Ljg2MTYsNDQuNTM5IEwzNC44NjE2LDY0LjU2NSBMNDAuNzIzNiw2NC41NjUgQzQ0Ljc4NjYsNjQuNTY1IDQ3LjQzNDYsNjIuNTE3IDQ3LjQzNDYsNTkuMjMyIEM0Ny40MzQ2LDU2LjU4MyA0NS44NDU2LDU0LjgxNyA0Mi44MDc2LDU0LjE0NiBMNDIuODA3Niw1NC4xNDYgWiBNMzYuNDE0Niw0NS44MTEgTDM2LjQxNDYsNTMuODI4IEwzOC41MzQ2LDUzLjgyOCBDNDIuNTk1Niw1My44MjggNDQuMDA4Niw1Mi4yMDMgNDQuMDA4Niw0OS44MDIgQzQ0LjAwODYsNDYuNzY0IDQxLjYwNzYsNDUuODExIDM4LjQ5ODYsNDUuODExIEwzNi40MTQ2LDQ1LjgxMSBaIE00MC41NDc2LDYzLjI1OSBDNDQuNjc5Niw2My4yNTkgNDUuNzc0Niw2MS4wMzMgNDUuNzc0Niw1OS4xOTcgQzQ1Ljc3NDYsNTcuMjU0IDQ0LjcxNDYsNTUuMSAzOS44NzY2LDU1LjEgTDM2LjQxNDYsNTUuMSBMMzYuNDE0Niw2My4yNTkgTDQwLjU0NzYsNjMuMjU5IFogTTY4LjYyNjYsNTEuOTIxIEM2OC44Mzg2LDUyLjgwNCA2OC45MDk2LDUzLjY4NyA2OC45MDk2LDU0LjUzNSBDNjguOTA5Niw1OS4xOTcgNjYuMTkwNiw2NC41NjUgNTguMjc4Niw2NC41NjUgTDUxLjAwMTYsNjQuNTY1IEw1MS4wMDE2LDQ0LjUzOSBMNTcuOTk1Niw0NC41MzkgQzYwLjk2MjYsNDQuNTM5IDYzLjE4NzYsNDUuMjEgNjQuODEyNiw0Ni4zMDUgQzYwLjk5NzYsNDEuMDQyIDU1LjE2OTYsMzYuMzggNDcuODkzNiwzNS43NzkgQzM0LjcxOTYsMzQuNzIgMjkuODEwNiw0MS45MjUgMjkuODEwNiw0MS45MjUgQzI5LjgxMDYsNDEuOTI1IDI0LjkzNTYsMTkuNTY3IDE4LjM2NjYsMTkuNTY3IEM5LjkyNDYsMTkuNTY3IDMuMzU1Niw0MC45MDEgMC45MTc2LDUwLjQ3MyBDMC44NDc2LDUwLjY0OSAwLjcwNTYsNTAuNzkxIDAuNTI5Niw1MC43OTEgQzAuMzE3Niw1MC43OTEgMC4xNDA2LDUwLjYxNCAwLjE0MDYsNTAuMzY3IEwwLjE0MDYsNTAuMjk2IEMwLjE0MDYsNTAuMjk2IDcuNDUyNiwxNS44NTkgMTguMjk1NiwxNS44NTkgQzI0Ljg2NTYsMTUuODU5IDI5LjU2MjYsMzcuNjE2IDI5LjU2MjYsMzcuNjE2IEMyOS41NjI2LDM3LjYxNiAzNC4zNjY2LDMwLjYyMyA0Ny4zMjg2LDMxLjY4MiBDNTkuMjY3NiwzMi42MDEgNjcuMjQ5Niw0NC42NDUgNjguNjI2Niw1MS45MjEgTDY4LjYyNjYsNTEuOTIxIFogTTU4LjE3MTYsNjMuMjU5IEw1Mi41NTY2LDYzLjI1OSBMNTIuNTU2Niw0NS44MTEgTDU4LjEwMTYsNDUuODExIEM2My41MDU2LDQ1LjgxMSA2Ny4yNDk2LDQ5LjQxMyA2Ny4yNDk2LDU0LjUzNSBDNjcuMjQ5Niw2MC4xODYgNjIuOTc1Niw2My4yNTkgNTguMTcxNiw2My4yNTkgTDU4LjE3MTYsNjMuMjU5IFogTTIxLjE1NzYsNDkuNTE5IEMyMS4xNTc2LDQ3LjM2NSAyMi45OTM2LDQ1LjcwNSAyNS4zOTU2LDQ1LjcwNSBDMjYuNzcyNiw0NS43MDUgMjcuODMxNiw0Ni4wNTggMjkuODgwNiw0Ny4yMjMgTDI5Ljg4MDYsNDUuNTI4IEMyOC4zMjc2LDQ0LjY4IDI2LjgwNzYsNDQuMjU2IDI1LjI1MzYsNDQuMjU2IEMyMi4wNzU2LDQ0LjI1NiAxOS40OTY2LDQ2LjYyMyAxOS40OTY2LDQ5LjU5IEMxOS40OTY2LDU2LjE5NSAyOS4wMzM2LDUzLjY4NyAyOS4wMzM2LDU5LjQwOSBDMjkuMDMzNiw2MS42MzQgMjcuMTk2Niw2My4zNjUgMjQuNzk0Niw2My4zNjUgQzIzLjI0MDYsNjMuMzY1IDIyLjAwMzYsNjIuODM1IDE5Ljc0NDYsNjEuMjQ2IEwxOS43NDQ2LDYzLjA0NyBDMjEuNTA5Niw2NC4yMTIgMjMuMjQwNiw2NC44MTMgMjQuOTAwNiw2NC44MTMgQzI4LjE1MDYsNjQuODEzIDMwLjY5MzYsNjIuNDExIDMwLjY5MzYsNTkuMzM4IEMzMC42OTM2LDUyLjMxIDIxLjE1NzYsNTQuODUyIDIxLjE1NzYsNDkuNTE5IEwyMS4xNTc2LDQ5LjUxOSBaIiBpZD0iRmlsbC0yMiI+PC9wYXRoPgogICAgICAgICAgICAgICAgPC9nPgogICAgICAgICAgICA8L2c+CiAgICAgICAgPC9nPgogICAgPC9nPgo8L3N2Zz4=" alt="Logo SBDRJ"> </div>
+    <div class="sub-bars">
+      <div class="return-bar"> <a role="button" href="javascript:window.history.go(-1)" class="icon return hidden-text">Voltar</a>
+        <div class="title icon chat"><span>F&oacute;rum</span></div>
+      </div>
+    </div>
+  </div>
+  <div style="margin-top:20px;" class=" white align-vertical scroll">
+    
+    <div id="passo1" style="margin-left:20px; margin-top:0px;">
+    <center><img id="carregando" src="img/carregando.gif" height="40" width="40" style="display:none;"></center>
+    <center><a href="javascript:window.history.go(0)"><img id="offline" src="img/notificacalo_offline.jpg" style="display:none; width:70%; max-width:500px;"></a></center>
+    
+    <center>
+      <button onClick="window.location.href = 'novo_forum.html'" id="botao" class="btn2 entrar2" type="submit">Novo Tópico</button>
+    </center>
+    <span id="retorno_post"></span> </div>
+  </div>
+  <div class="toolbar black">
+    <ul class="list">
+                    <li class="item"><a role="button" href="principal.html" class="icon home hidden-text">Home</a></li>
+                    <li class="item"><a role="button" href="eventos.html" class="icon eventos hidden-text">Eventos</a></li>
+                    <li class="item"><a role="button" href="ferramentas.html" class="icon tools hidden-text">Ferramentas Clínicas</a></li> 
+                    <li class="item"><a role="button" href="notificacoes.html" class="icon notif hidden-text">Notificações</a></li>
+                    
+                </ul>
+  </div>
+</div>
+
+<!--<script type="text/javascript" src="cordova.js"></script>-->
+
+</body>
+</html>

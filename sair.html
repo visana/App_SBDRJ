@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <script type="text/javascript" src="js/index.js" defer></script>
+        <link rel="stylesheet" type="text/css" href="css/base.css">
+        <link rel="stylesheet" type="text/css" href="css/login.css">
+      
+        <title>Sociedade Brasileira de Dermatologia | Regional Rio de Janeiro</title>
+    </head>
+    <body>
+      <div class="app">
+        <center><img id="carregando" src="img/carregando.gif" height="40" width="40"></center>
+      </div>
+
+    </body>
+</html>
+<script src="jquery-1.10.2.js"></script>
+<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+
+<script>
+
+
+  document.addEventListener('deviceready', function () {
+    var $deviceId = device.uuid || 1337;
+
+    console.log("carrega");
+
+
+    $.post( "http://appsbdrj.kinghost.net/appsbdrj/recebepost.php", { form: "sair", device: $deviceId })
+      .done(function( data ) { //if (data==='AUTORIZADO')
+        window.location.href = "index.html";
+      });
+
+  }, false);
+  // $(".id.input").val("11873378700");$(".input.pass").val("860610");$("button.entrar").click()
+</script>
