@@ -1,0 +1,93 @@
+.menubar {
+    background-color: #014761; 
+}
+
+.app {
+    
+    overflow-y: hidden;
+}
+.sub-menu .btn {
+    justify-content: center;
+}
+.servico-bar {
+    height: 110px;
+    background-color: transparent;
+}
+.servico-bar .icon{
+    width: 40px;
+    position: absolute;
+    cursor: pointer;
+    z-index: 1;
+}
+.servico-bar .icon::after{
+    background-size: 15px auto;
+    background-position: left;
+}
+.icon.left{
+    left: 0;
+    transform: rotateY(180deg);
+}
+.icon.right{
+    right: 0;
+}
+.return-bar > .title span {
+    padding-top: 3px;
+    padding-left: 12px;
+}
+.sub-menu .icon.palestra::after, .sub-menu .icon.valor::after {
+    background-size: 20px auto;
+}
+.sub-menu .btn span{
+    padding-left: 10px;
+    max-width: 175px;
+    width: auto;
+}
+
+.sub-menu .btn::after{
+    width: 57px;
+    position: relative;
+    margin: 5px 0;
+    max-height: calc(100% - 10px);
+    background-size: 25px auto;
+}
+
+.banner-list {
+    display: flex;
+    height: 100%;
+    transition: margin-left .5s;
+    transition-timing-function: ease-in-out;
+}
+.banner-list .banner {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.banner {
+    padding: 10px 0;
+    flex-direction: column;
+}
+.banner img {
+    height: 100%;
+}
+.banner.first {
+    color: black;
+    background-color: red;
+}
+.banner.two {
+    background-color: #FFD9ED;
+}
+.banner.last {
+    color: red;
+    background-color: black;
+}
+@media screen and ( max-height: 600px){
+    .servico-bar {
+        height: 90px;
+    }
+}
+
+
+
+
+

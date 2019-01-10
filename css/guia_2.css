@@ -1,0 +1,139 @@
+.menubar {
+    background-color: #014761; 
+}
+
+.app {
+    
+    overflow-y: hidden;
+}
+
+.app::before{
+    background-color: #DDDDDD;   
+}
+/*Busca*/
+.busca {
+    font-size: 20px;
+    padding: 20px 3% 0;
+    font-weight: 300;
+}
+.busca .text {
+    font-size: 16px;
+    text-align: center;
+    margin: 0 auto 4vh;
+}
+.busca .btn {
+    align-items: center;
+    font-weight: 300;
+}
+
+.btn2 {
+    height: 46px;
+	width: 120px
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 17px;
+    justify-content: center;
+    align-items: center;
+    background-color: green;
+    border-radius: 3px;
+}
+
+.btn3 {
+    height: 46px;
+    display: flex;
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 17px;
+    justify-content: center;
+    align-items: center;
+    background-color: green;
+    border-radius: 3px;
+}
+
+.entrar2 {
+    background-color: #D94514;
+    border: none;
+
+.busca .btn::after{
+    position: relative;
+}
+
+.buscar {
+    padding-top: 11px;
+    border-width: 0 0 1px 0;
+    border-style: solid;
+    border-color: #808080;
+}
+
+.outros {
+    background-color: #004760;
+    border: 1px solid #ffffff;
+    margin-bottom: 14px;
+}
+
+
+.busca .arrow{
+    justify-content: space-between;
+}
+.busca .arrow::after{
+    width: 33px;
+    background-size: auto 23px;
+}
+.busca .clear {
+    display: flex;
+    flex-direction: row-reverse;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+.busca-tools .clear::after{
+    width: 33px;
+    background-size: auto 28px;
+}
+.busca-tools .clear span {
+    flex: 1;
+    padding-left: 18px;
+}
+.busca .busca-tools {
+    margin-top: 11vh;
+    padding: 5px;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+}
+.busca-tools .enviar, .busca-tools .clear {
+    max-width: 50%;
+}
+.busca-tools .enviar {
+    background-color: #39AC4A;
+    color: #fff;    
+    flex: 1;
+    justify-content: center;
+    padding: 0;
+}
+.busca-tools .clear {
+    flex: 1;    
+}
+@media screen and ( max-height: 600px){
+    .busca .arrow::after {
+        width: 33px;
+        background-size: auto 17px;
+    }
+    .busca-tools .clear span {
+        padding-left: 12px;
+    }
+    .busca-tools .clear::after {
+        width: 30px;
+        background-size: auto 25px;
+    }
+    .busca .busca-tools {
+        margin-top: 7vh;
+        padding: 2px;
+    }
+}
+
+
+
+
+
+
+

@@ -1,0 +1,80 @@
+.app {
+    
+    overflow-y: hidden;
+}
+.menu-icon{
+    color: #000;
+}
+.sub-menu .btn span{
+    padding-left: 17px;
+}
+.sub-menu .btn::after{
+    width: 57px;
+    position: relative;
+    margin: 5px 0;
+    max-height: calc(100% - 10px);
+    border-width: 0 1px 0 0;
+    border-style: solid;
+    background-size: 25px auto;
+}
+
+.header .logo{
+    display: block;
+    width: 100%;
+    max-width: 264px;
+    margin: 0 auto 54px;
+}
+
+.footer{
+    width: 100vw;
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 24px;
+    color:#004760;
+    
+}
+.footer > .title {
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 12px;
+    
+}
+.footer > .text{
+    text-align: center;
+}
+@media screen and ( max-height: 715px ) {
+    .header .logo{
+        margin-top: -10px !important;
+        margin-bottom: 15px;
+    }
+    .footer {
+        margin-top: 10px;
+        position: relative
+    }
+}
+
+@media screen and ( max-height: 650px){
+    .header .logo{
+        max-width: 210px;
+        margin: 0 auto 20px;
+    }
+    .footer {
+        margin-top: 15px;
+        margin-bottom: 0;
+    }
+}
+
+@media screen and ( max-height: 600px){
+    .header .logo {
+        max-width: 200px;
+        margin-bottom: 15px; 
+    }
+    .footer {
+        margin-top: 10px;
+    }
+    .footer > .title {
+        margin-bottom: 6px;
+    }
+}

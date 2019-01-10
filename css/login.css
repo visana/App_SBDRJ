@@ -1,0 +1,76 @@
+.icon.menu-icon{
+    display: none;
+}
+.app{
+    background-color: rgba(0, 71, 96, .8);
+    height: 100vh;
+}
+.toolbar{
+    display: none;
+}
+.header .logo{
+    max-width: 164px;
+    display: block;
+    margin:20px auto 35px;
+}
+.login {
+    display: flex;
+    flex-direction: column;
+    max-width: 260px;
+    margin: 0 auto;
+    
+}
+.login > .login-form {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 7px;
+}
+
+.login-form .id {
+    padding-top: 11px;
+    border-width: 0 0 1px 0;
+    border-style: solid;
+    border-color: #808080;
+}
+.login-form .pass {
+    margin-bottom: 7px;
+}
+.login .btn {
+    height: 46px;
+    display: flex;
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 17px;
+    justify-content: center;
+    align-items: center;
+    background-color: green;
+    border-radius: 3px;
+}
+.login-form .entrar {
+    background-color: #D94514;
+    border: none;
+}
+.login .outros {
+    background-color: #004760;
+    border: 1px solid #ffffff;
+    margin-bottom: 14px;
+}
+.login .help {
+    display: flex;
+    justify-content: space-between;    
+    padding: 0 2px;
+}
+.login .help .right a{
+    display: flex;
+    flex-direction: row-reverse;
+}
+.login .help a{
+    color: #fff;
+    font-size: 12px;
+    text-decoration: underline;
+}
+@media screen and ( max-height: 600px ) {
+    .header .logo{
+        margin-top: -20px;
+    }
+}
